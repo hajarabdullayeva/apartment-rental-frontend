@@ -1,0 +1,118 @@
+$media: (
+  "xs": 576px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+  "xl": 1400px,
+);
+
+@mixin xl {
+  @media (max-width: map-get($media, "xl")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: map-get($media, "lg")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: map-get($media, "md")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: map-get($media, "sm")) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: map-get($media, "xs")) {
+    @content;
+  }
+}
+
+@include xl {
+  .container {
+    padding: 0 210px;
+  }
+}
+
+@include lg {
+  .container {
+    padding: 0 110px;
+  }
+}
+
+@include md {
+  header {
+    background-color: $primaryDark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 0 16px;
+    margin-left: 8px;
+    z-index: 99;
+
+    h2 {
+      color: $primaryWhite;
+      font-size: 24px;
+      line-height: 36px;
+      margin: 8px 0;
+    }
+
+    i {
+      color: $primaryWhite !important;
+    }
+  }
+
+  .container {
+    padding: 0 9px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .hero {
+    margin-top: 80px;
+    margin-left: 0;
+    border-left: 1px solid $inputColor;
+
+    .gallery {
+      img {
+        max-width: 23.8%;
+      }
+    }
+  }
+}
+
+@include sm {
+  header {
+    margin-left: 1px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .gallery {
+    img {
+      max-width: 23.4% !important;
+    }
+  }
+}
+
+@include xs {
+  .gallery {
+    img {
+      max-width: 22.8% !important;
+    }
+  }
+}

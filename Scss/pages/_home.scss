@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  padding: 0 270px;
+}
+
+h2 {
+  color: $primaryGreen;
+  margin: 10px 0;
+  font-size: 30px;
+  line-height: 45px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.border {
+  border-top: 1px solid $borderColor;
+  margin: 20px 0;
+}
+
+input {
+  border: 1px solid $inputColor;
+  padding: 8px;
+  width: 100%;
+  font: inherit;
+}
+
+button {
+  color: $primaryWhite;
+  background-color: $primaryGreen;
+  text-align: left !important;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  font-size: 15px;
+  line-height: 22.5px;
+  cursor: pointer;
+
+  i {
+    margin-right: 16px;
+    color: $primaryWhite;
+  }
+}
+
+button:hover {
+  background-color: $inputColor;
+  color: $primaryDark;
+}
+
+img {
+  width: 100.1%;
+  margin-bottom: -6px;
+  vertical-align: middle;
+}
+
+.sidebar {
+  background-color: $sidebarColor;
+  padding: 16px;
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  width: 260px;
+  border-left: 1px solid $inputColor;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    padding: 16px 0;
+  }
+}
+
+.hero {
+  padding: 0.01em 16px 0.01em 16px;
+  margin-left: 260px;
+  border-right: 1px solid $inputColor;
+
+  .slider {
+    display: none;
+    position: relative;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .title {
+    background-color: $primaryDark;
+    padding: 0.01em 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    p {
+      color: $primaryWhite;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+
+    img {
+      max-width: 23.3%;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    .divide {
+      display: flex;
+      justify-content: flex-start;
+
+      div {
+        width: 50%;
+      }
+    }
+
+    h4 {
+      margin-top: 30px;
+      font-weight: 550;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 27px;
+      margin: 18px 0;
+    }
+  }
+
+  .description {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  button {
+    width: 33.3%;
+    text-align: center !important;
+  }
+
+  .contact {
+    h2 {
+      color: $primaryDark;
+    }
+
+    .contact-detail {
+      margin: 0;
+    }
+  }
+}

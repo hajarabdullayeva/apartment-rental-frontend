@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: $primaryDark;
+}
+
+body {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: $primaryDark;
+  background-color: $primaryWhite;
+}
+
+h1, h2, h3, h4, h5, h5{
+  margin: 10px 0;
+  font-weight: 400;
+}
