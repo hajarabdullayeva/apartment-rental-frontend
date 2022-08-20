@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Scss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet">
     <title>The Apartment Rental</title>
     <script src="https://kit.fontawesome.com/97b156df9b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
+    <div id="testkid"></div>
     <div>
         <!--? Header for mobile menu -->
         <header>
@@ -22,32 +28,37 @@
         <div class="container">
             <!--? Sidebar menu for desktop -->
             <div class="sidebar">
+                <div class="close"><i class="fa fa-remove"></i> </div>
                 <h3>Rental</h3>
                 <h3>from $99</h3>
                 <h6>per night</h6>
                 <div class="border"></div>
-
-                <form>
+                <form id="form_d">
                     <p><label><i class="fa fa-calendar-check-o"></i>Check In</label></p>
-                    <input type="text" name="checkIn" placeholder="DD MM YYYY" required class="date"
+                    <input type="text" name="checkIn" placeholder="DD MM YYYY" required class="date-in"
                         onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <p class="check-in-error error"></p>
                     <p><label><i class="fa fa-calendar-o"></i> Check Out</label></p>
-                    <input type="text" name="checkOut" placeholder="DD MM YYYY" required class="date"
+                    <input type="text" name="checkOut" placeholder="DD MM YYYY" required class="date-out"
                         onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <p class="check-out-error error"></p>
                     <p><label><i class="fa fa-male"></i> Adults</label></p>
-                    <input type="number" name="Adults" value="1" min="1" max="6">
+                    <input type="number" name="adults" value="1" min="1" max="6" class="adult-count">
+                    <p class="adult-count-error error"></p>
                     <p><label><i class="fa fa-child"></i> Kids</label></p>
-                    <input type="number" name="Kids" value="0" min="0" max="6">
+                    <input type="number" name="kids" value="0" min="0" max="6" class="kid-count">
+                    <p class="kid-count-error error"></p>
                     <br />
                     <p>
-                        <button type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>
+                        <button type="submit" class="search-btn"><i class="fa fa-search"></i> Search
+                            availability</button>
                     </p>
                 </form>
 
 
                 <div class="content">
                     <a href="#apartment"><i class="fa fa-building"></i> Apartment</a>
-                    <a href="javascript:void(0)" onclick="document.getElementById('subscribe').style.display='block'">
+                    <a href="javascript:void(0)" onclick="document.querySelector('.modal').style.display='block'">
                         <i class="fa fa-rss"></i> Subscribe</a>
                     <a href="#contact"><i class="fa fa-envelope"></i> Contact</a>
                 </div>
@@ -56,39 +67,21 @@
             <div class="hero" id="apartment">
                 <h2>The Apartment</h2>
 
-                <!-- ? Image slider to display apartment-->
+                <!-- ? Image slider (Poster) to display apartment-->
                 <div class="slides">
-                    <div class="slider active">
-                        <img src="https://www.w3schools.com/w3images/livingroom.jpg">
-                        <div class="title">
-                            <p>Living Room</p>
-                        </div>
-                    </div>
                     <div class="slider">
-                        <img src="https://www.w3schools.com/w3images/diningroom.jpg">
-                        <div class="title">
-                            <p>Dining Room</p>
-                        </div>
-                    </div>
-                    <div class="slider">
-                        <img src="https://www.w3schools.com/w3images/bedroom.jpg">
-                        <div class="title">
-                            <p>Bed Room</p>
-                        </div>
-                    </div>
-                    <div class="slider">
-                        <img src="https://www.w3schools.com/w3images/livingroom2.jpg">
-                        <div class="title">
-                            <p>Living Room II</p>
+                        <img class="active-img" src="./images/livingroom.jpg">
+                        <div class="title-div">
+                            <p class="title">Living Room</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="gallery">
-                    <img src="https://www.w3schools.com/w3images/livingroom.jpg">
-                    <img src="https://www.w3schools.com/w3images/diningroom.jpg">
-                    <img src="https://www.w3schools.com/w3images/bedroom.jpg">
-                    <img src="https://www.w3schools.com/w3images/livingroom2.jpg">
+                    <img class="i-list" id="Living Room" src="./images//livingroom.jpg">
+                    <img class="i-list" id="Dining Room" src="./images/diningroom.jpg">
+                    <img class="i-list" id="Bedroom" src="./images/bedroom.jpg">
+                    <img class="i-list" id="Living Room ||" src="./images/livingroom2.jpg">
                 </div>
 
                 <!-- ? Informational section -->
@@ -149,13 +142,12 @@
                     <div class="info">
                         <h4>Rules</h4>
                         <p class="description">
-
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
                         <p>Subscribe to receive updates on available dates and special offers.</p>
-                        <button type="submit">Subscribe</button>
+                        <button type="submit" class="subs-btn">Subscribe</button>
                     </div>
 
                     <div class="border"></div>
@@ -171,9 +163,9 @@
                     <p>Questions? Go ahead, ask them:</p>
 
                     <form>
-                        <p><input type="text" placeholder="Name" required name="Name"></p>
-                        <p><input type="email" placeholder="Email" required name="Email"></p>
-                        <p><input type="text" placeholder="Message" required name="Message"></p>
+                        <p><input type="text" placeholder="Name" required name="name"></p>
+                        <p><input type="email" placeholder="Email" required name="email"></p>
+                        <p><input type="text" placeholder="Message" required name="message"></p>
                         <button type="submit">Send a Message</button>
                     </form>
                 </div>
@@ -183,10 +175,27 @@
                     Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
                         target="_blank">w3.css</a>
                 </footer>
+
+                <!-- ! End of page -->
             </div>
         </div>
+    </div>
 
-
+    <!-- !Subscribe Modal -->
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <div>
+                    <i onclick="document.querySelector('.modal').style.display='none'"
+                        class="fa fa-remove modal__close"></i>
+                    <h2 class="modal__title">SUBSCRIBE</h2>
+                    <p>Join our mailing list to receive updates on available dates and special offers.</p>
+                    <input required placeholder="Enter e-mail" name="email" type="text" class="modal__input">
+                    <p class="mail-err"></p>
+                    <button type="submit" class="btn btn_dark btn_min">Subscribe</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="./js/app.js"></script>

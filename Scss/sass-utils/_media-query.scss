@@ -57,7 +57,7 @@ $media: (
     position: fixed;
     width: 100%;
     padding: 0 16px;
-    margin-left: 8px;
+    margin-left: 10px;
     z-index: 99;
 
     h2 {
@@ -91,6 +91,9 @@ $media: (
       }
     }
   }
+  .modal__dialog {
+    max-width: 600px;
+  }
 }
 
 @include sm {
@@ -107,6 +110,14 @@ $media: (
       max-width: 23.4% !important;
     }
   }
+
+  .modal {
+    padding-top: 10px;
+  }
+
+  .modal__dialog {
+    max-width: 500px;
+  }
 }
 
 @include xs {
@@ -114,5 +125,8 @@ $media: (
     img {
       max-width: 22.8% !important;
     }
+  }
+  .modal__dialog {
+    max-width: 550px;
   }
 }

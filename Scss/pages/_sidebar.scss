@@ -1,0 +1,19 @@
+.sidebar {
+  background-color: $sidebarColor;
+  padding: 16px;
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  width: 260px;
+  border-left: 1px solid $inputColor;
+  z-index: 99;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    padding: 16px 0;
+  }
+}
