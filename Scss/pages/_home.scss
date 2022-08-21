@@ -159,8 +159,15 @@ img {
 }
 
 .error {
-  color: red;
+  color: $errorColor;
   font-size: 18px;
   font-weight: 500;
   margin-top: 10px !important;
+}
+
+#availability {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  color: $primaryGreen;
 }

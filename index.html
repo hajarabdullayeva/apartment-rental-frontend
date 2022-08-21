@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <div id="testkid"></div>
     <div>
         <!--? Header for mobile menu -->
         <header>
@@ -48,11 +47,12 @@
                     <p><label><i class="fa fa-child"></i> Kids</label></p>
                     <input type="number" name="kids" value="0" min="0" max="6" class="kid-count">
                     <p class="kid-count-error error"></p>
-                    <br />
                     <p>
                         <button type="submit" class="search-btn"><i class="fa fa-search"></i> Search
                             availability</button>
                     </p>
+                    <div id="availability"></div>
+
                 </form>
 
 
@@ -163,10 +163,13 @@
                     <p>Questions? Go ahead, ask them:</p>
 
                     <form>
-                        <p><input type="text" placeholder="Name" required name="name"></p>
-                        <p><input type="email" placeholder="Email" required name="email"></p>
-                        <p><input type="text" placeholder="Message" required name="message"></p>
-                        <button type="submit">Send a Message</button>
+                        <p><input type="text" placeholder="Name" required name="name" class="name-input"></p>
+                        <p class="name-error error"></p>
+                        <p><input type="email" placeholder="Email" required name="email" class="email-input"></p>
+                        <p class="email-error error"></p>
+                        <p><input type="text" placeholder="Message" required name="message" class="message-input"></p>
+                        <p class="message-error error"></p>
+                        <button type="submit" class="send-button">Send a Message</button>
                     </form>
                 </div>
 
@@ -191,7 +194,7 @@
                     <h2 class="modal__title">SUBSCRIBE</h2>
                     <p>Join our mailing list to receive updates on available dates and special offers.</p>
                     <input required placeholder="Enter e-mail" name="email" type="text" class="modal__input">
-                    <p class="mail-err"></p>
+                    <p class="mail-err error"></p>
                     <button type="submit" class="btn btn_dark btn_min">Subscribe</button>
                 </div>
             </div>

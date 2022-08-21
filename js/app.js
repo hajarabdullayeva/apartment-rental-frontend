@@ -19,6 +19,13 @@ const modal = document.querySelector('.modal')
 const subBtn = document.querySelector('.btn_dark')
 const modalInput = document.querySelector('.modal__input')
 const mailErr = document.querySelector('.mail-err')
+const sendButton = document.querySelector('.send-button')
+const nameInput = document.querySelector('.name-input')
+const emailInput = document.querySelector('.email-input')
+const messageInput = document.querySelector('.message-input')
+const nameError = document.querySelector('.name-error')
+const emailError = document.querySelector('.email-error')
+const messageError = document.querySelector('.message-error')
 
 // ! Open sidebar when burger menu is clicked
 btn.addEventListener('click', () => {
@@ -97,6 +104,7 @@ const isEmpty = () => {
   }
 }
 
+// ! Check if apartment is available
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault()
 
@@ -104,11 +112,44 @@ searchBtn.addEventListener('click', (e) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
-      if (Number(kidCount.value) <= data[0].kids) {
-        // console.log('sert duzdur')
-        document.getElementById('testkid').innerText = 'Four apartments are found.'
+
+      if (dateIn.value && dateOut.value && adultCount.value && kidCount.value) {
+        if (Number(kidCount.value) <= data[0].kids) {
+          document.getElementById('availability').innerText =
+            'Apartment is found.'
+        } else {
+          document.getElementById('availability').innerText =
+            'Apartment not found.'
+          document.getElementById('availability').style.color = 'red'
+        }
       }
     })
 
   isEmpty()
+})
+
+// ! Check if Contact section inputs are empty
+
+sendButton.addEventListener('click', (e) => {
+  if (!nameInput.value) {
+    nameError.innerHTML = 'This field is required'
+  } else {
+    nameError.innerHTML = ''
+  }
+  if (!emailInput.value) {
+    emailError.innerHTML = 'This field is required'
+  } else {
+    let isValid = ValidateEmail(modalInput.value)
+
+    if (!isValid) {
+      emailError.innerText = 'E-mail is not valid'
+    } else {
+      emailError.innerHTML = ''
+    }
+  }
+  if (!messageInput.value) {
+    messageError.innerHTML = 'This field is required'
+  } else {
+    messageError.innerHTML = ''
+  }
 })

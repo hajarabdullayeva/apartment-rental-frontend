@@ -196,6 +196,13 @@ img {
   margin-top: 10px !important;
 }
 
+#availability {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #4caf50;
+}
+
 .sidebar {
   background-color: #f1f1f1;
   padding: 16px;
