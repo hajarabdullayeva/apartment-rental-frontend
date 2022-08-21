@@ -108,7 +108,7 @@ const isEmpty = () => {
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault()
 
-  fetch('http://localhost:8080/api/v1/dates')
+  fetch('https://apartment-rental-backend.herokuapp.com/api/v1/dates')
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
@@ -117,6 +117,7 @@ searchBtn.addEventListener('click', (e) => {
         if (Number(kidCount.value) <= data[0].kids) {
           document.getElementById('availability').innerText =
             'Apartment is found.'
+          document.getElementById('availability').style.color = '#4caf50'
         } else {
           document.getElementById('availability').innerText =
             'Apartment not found.'
