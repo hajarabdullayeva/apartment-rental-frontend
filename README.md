@@ -1,5 +1,5 @@
-# code-assignment
-PYP pre assignment
+# aratment-rental-frontend
+
 Tapşırıq
 Bu link-dəki template hazırlanmalıdır.
 
