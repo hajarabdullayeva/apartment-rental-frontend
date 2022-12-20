@@ -27,17 +27,3 @@
 - Git: GitHub
 - Hosting: Heroku(Netlify, AWS, Google Cloud, Digital Ocean)
 
-
----
-#### Qiymətləndirmə
-
-- Lahiyənin Frontend hissəsinin işlək olması və istəklərə tam cavab verməsi: **70%**
-- Lahiyənin Backend hissəsinin işlək olması və istəklərə tam cavab verməsi: **10%**
-- Lahiyənin tam şəkildə hostingdə yerləşdirilməsi: **10%**
-- Lahiyənin CD pipeline-ının olması **5%**
-- Kode keyfiyyəti ve rəylərin düzgün olması: **5%**
-
----
-#### Təhvil və bitiş vaxtı
- - Lahiyə 21.08.2022-yə qədər yekunlaşmalıdır. 
- - Lahiyə source code olaraq GitHub-da şəxsi profilinizdə public repo-da olmalıdır.
